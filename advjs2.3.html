@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>advance js2.3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    function obj(){
+    	var o={type:"",brand:"",model:"",colour:"",vin:""}
+    	o.type=document.getElementById('type').value;
+    	o.brand=document.getElementById('brand').value;
+    	o.model=document.getElementById('model').value;
+    	o.colour=document.getElementById('colour').value;
+    	o.vin=document.getElementById('vin1').value;
+    	return o;
+    }
+  	function adding(){
+
+  		var x=obj();
+  		alert(x);
+  		localStorage.setItem("document.getElementById('vin1').value",JSON.stringify(x));
+  			alert("record has been added");
+  			
+  			alert(localStorage.getItem("document.getElementById('vin1').value"));
+
+  	}
+  	function removing(){
+      localStorage.removeItem("document.getElementById('vin2').value")
+  	}
+
+
+  	function see(){
+  		alert("gh");
+  		document.getElementById('vin1').value=document.getElementById('vin2').value;
+alert(localStorage.getItem("document.getElementById('vin1').value"));
+  	}
+
+
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Vehicle details:</h2>
+  <form role="form">
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <input type="text" class="form-control" id="type" placeholder="enter type of vehicle">
+    </div>
+    <div class="form-group">
+      <label for="brand">Brand:</label>
+      <input type="text" class="form-control" id="brand" placeholder="enter brand">
+    </div>
+    <div class="form-group">
+      <label for="model">model:</label>
+      <input type="text" class="form-control" id="model" placeholder="Enter model">
+    </div>
+    <div class="form-group">
+      <label for="colour">Colour:</label>
+      <input type="text" class="form-control" id="colour" placeholder="enter colour">
+    </div>
+    <div class="form-group">
+      <label for="vin">VIN:</label>
+      <input type="text" class="form-control" id="vin1" placeholder="enter VIN">
+    </div>
+    <button onclick="adding()" class="btn btn-default">ADD TO THE RECORDS</button>
+    <hr><hr>
+      <div class="form-group">
+      <label for="vin">VIN:</label>
+      <input type="text" class="form-control" id="vin2" placeholder="enter VIN">
+    </div>
+    <button onclick="removing()" class="btn btn-default">DELETE THIS RECORD</button>
+    <button onclick="see()" class="btn btn-default">SEE THIS RECORD</button>
+    
+  </form>
+</div>
+
+
+</body>
+</html>
+
